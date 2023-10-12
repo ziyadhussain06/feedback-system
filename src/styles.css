@@ -11,3 +11,29 @@
   .eye{
     cursor: pointer;
   }
+  .selected-li {
+    color: #292929;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    
+}
+.selected-li svg path{
+    stroke: #292929;
+
+}
+.nav-bar{
+    
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px; 
+}
+.nav-bar:hover{
+    color: #292929;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.nav-bar svg path:hover{
+    stroke: #292929;
+}
