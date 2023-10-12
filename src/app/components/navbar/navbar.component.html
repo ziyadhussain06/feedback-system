@@ -21,7 +21,7 @@ class="md:z-10 sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-
                 clip-rule="evenodd" />
         </svg>
         <input id="search-field"
-            class="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+            class="block h-full border w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
             placeholder="Search..." type="search" name="search">
     </form>
     <div class="flex items-center gap-x-4 lg:gap-x-6">
@@ -39,11 +39,11 @@ class="md:z-10 sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-
 
         <!-- Profile dropdown -->
         <div class="relative">
-            <button type="button" class="-m-1.5 flex items-center p-1.5" id="user-menu-button"
+            <button type="button" class="-m-1.5 flex items-center p-1.5 text-gray-400 hover:text-gray-500" id="user-menu-button"
                 aria-expanded="false" aria-haspopup="true">
                 <span class="sr-only">Open user menu</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21C20 19.6044 20 18.9067 19.8278 18.3389C19.44 17.0605 18.4395 16.06 17.1611 15.6722C16.5933 15.5 15.8956 15.5 14.5 15.5H9.5C8.10444 15.5 7.40665 15.5 6.83886 15.6722C5.56045 16.06 4.56004 17.0605 4.17224 18.3389C4 18.9067 4 19.6044 4 21M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4.3163 18.4384C4.92462 17.0052 6.34492 16 8 16H14C15.6551 16 17.0754 17.0052 17.6837 18.4384M15 8.5C15 10.7091 13.2091 12.5 11 12.5C8.79086 12.5 7 10.7091 7 8.5C7 6.29086 8.79086 4.5 11 4.5C13.2091 4.5 15 6.29086 15 8.5ZM21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 <span class="hidden lg:flex lg:items-center">
                     <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">{{ currentUser.username }}</span>
