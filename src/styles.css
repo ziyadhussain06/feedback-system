@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.show {
+    display: block !important;
+  }
+  
+  .d-block {
+    display: block !important;
+  }
+  .eye{
+    cursor: pointer;
+  }
