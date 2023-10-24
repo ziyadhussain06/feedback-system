@@ -1,6 +1,6 @@
 <table class="w-full text-left divide-y divide-gray-300 ">
     <thead class="bg-[#F9FAFB]">
-        <tr class="">
+        <tr class="" >
             <th scope="col"
                 class="px-3 py-3.5 text-left text-sm font-semibold text-[#475467] hidden md:table-cell ">
                 S.NO</th>
@@ -19,7 +19,8 @@
                 City </th>
             <th scope="col"
                 class="px-3 py-3.5 text-left md:text-sm font-12 font-semibold text-[#475467]">
-                Description</th>
+                Avg Rating</th>
+                
                 
             <th scope="col"
                 class="px-3 py-3.5 text-left text-sm font-semibold text-[#475467] hidden md:table-cell">
@@ -28,29 +29,30 @@
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 bg-white ">
-        <tr>
+        <tr *ngFor="let branch of branchreview">
         
             <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#101828] font-medium hidden md:table-cell">
-                01</td>
+                {{ branch.id }}</td>
             
             <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                ziyad hussian  </td>
+                {{ branch.full_name }}  </td>
                 <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                ziyad@gmail.com
+                {{ branch.phone }}
                 </td>
                 <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                03030303030</td>
+                {{branch.email}}</td>
             <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                Karachi</td>
+                {{branch.city}}</td>
 
             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                Good service
+                {{branch.avg_rating}}
             </td>
+            
             
 
             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-left text-sm font-medium sm:pr-6 hidden md:table-cell">

@@ -8,8 +8,8 @@ import { SideNavComponent } from './components/admin/side-nav/side-nav.component
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { CompanyDashboardComponent } from './pages/Branch/company-dashboard/company-dashboard.component';
 import { BranchDashboardComponent } from './pages/Company/branch-dashboard/branch-dashboard.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompnayListComponent } from './components/admin/compnay-list/compnay-list.component';
 import { CompaniesComponent } from './pages/admin/companies/companies.component';
@@ -25,6 +25,9 @@ import { ReviewopenmodalComponent } from './components/Company/reviewopenmodal/r
 import { QuestionComponent } from './pages/Company/question/question.component';
 import { QuestionlistComponent } from './components/Company/questionlist/questionlist.component';
 import { BranchnavbarComponent } from './components/Branch/branchnavbar/branchnavbar.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { QuestionListComponent } from './components/question-list/question-list.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 
@@ -52,6 +55,10 @@ import { BranchnavbarComponent } from './components/Branch/branchnavbar/branchna
     QuestionComponent,
     QuestionlistComponent,
     BranchnavbarComponent,
+    StarRatingComponent,
+    QuestionListComponent,
+    
+    
    
     
    
@@ -61,9 +68,14 @@ import { BranchnavbarComponent } from './components/Branch/branchnavbar/branchna
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CompanyModule
+    CompanyModule,
+    ReactiveFormsModule,
+    
   ],
-  providers: [],
+  providers: [ 
+    {provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

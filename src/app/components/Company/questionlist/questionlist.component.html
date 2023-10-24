@@ -21,19 +21,19 @@
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 bg-white ">
-        <tr>
+        <tr *ngFor="let question of questionList">
             <td class=" py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
                 <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
             </td>
             <td
                 class=" px-3 py-4 text-sm text-[#101828] font-medium hidden md:table-cell">
-                01</td>
+                {{question.id}}</td>
             <td
                 class=" px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                12-8-2023</td>
+                {{question.created_at}}</td>
             <td
                 class=" px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                Question </td>
+                {{question.text}} </td>
                
             <td class="relative  py-4 pl-3 pr-4 text-left text-sm font-medium sm:pr-6 hidden md:table-cell">
                 <div class="space-x-4 flex">
@@ -82,7 +82,7 @@
                                 </defs>
                             </svg>
                                   <h2 class="md:text-xl text-base  my-auto ml-4 font-semibold leading-6 text-gray-900"
-                                      id="slide-over-title">User Reviews</h2>
+                                      id="slide-over-title">Edit Question</h2>
                               </div>
 
                               <div class="ml-3 flex h-7 items-center my-auto">
@@ -101,7 +101,7 @@
                       </div>
 
                       
-
+                      <form >      
                       <div class="py-4 md:px-0 px-4">
                           <div class="md:border-[1px] md:border-[#ECEEF2] rounded-xl md:py-6 md:px-8">
                               <h2 class="md:text-xl text-base  my-auto  font-semibold leading-6 text-gray-900"
@@ -148,7 +148,7 @@
                             </button>
                         </div>
                       </div>
-                      
+                      </form>
                   </div>
               </div>
           </div>

@@ -9,21 +9,12 @@ import { ModalService } from '../../../modal.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
-
-  constructor(private toggleService: ToggleService,private authService: AuthService, private router: Router,private modalService: ModalService) {
-    const currentUser = this.authService.getCurrentUser();
-
-    if (!currentUser || currentUser.role !== 'admin') {
-      this.router.navigate(['/']);
-    }
-  }
+  constructor(private toggleService: ToggleService, private authService: AuthService, private router: Router,private modalService: ModalService) { }
   @ViewChild('modaal') modaal!: ElementRef;
-
   openModaal() {
     const modalElement = this.modaal.nativeElement;
     modalElement.classList.add('show', 'd-block');
   }
-
   closeModaal() {
     const modalElement = this.modaal.nativeElement;
     modalElement.classList.remove('show', 'd-block');
@@ -31,19 +22,17 @@ export class AdminDashboardComponent {
   toggleSidebar() {
     this.toggleService.toggleSidebar();
   }
-  signOut() {
-    this.authService.logout();
-    this.router.navigate(['/']);
-  }
+  // signOut() {
+  //   this.authService.logout();
+  //   this.router.navigate(['/']);
+  // }
   //Add company Modal
   openModal() {
     this.modalService.openModal();
   }
-
   closeModal() {
     this.modalService.closeModal();
   }
-
   isModalOpen() {
     return this.modalService.getIsOpen();
   }

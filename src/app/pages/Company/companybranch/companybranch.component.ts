@@ -30,4 +30,5 @@ closeModal() {
 isModalOpen() {
   return this.modalService.getIsOpen();
 }
+
 }

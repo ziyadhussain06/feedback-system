@@ -9,20 +9,22 @@ import { ModalService } from '../../../modal.service';
 })
 export class BranchsidenavComponent {
   constructor(private authService: AuthService, private router: Router,private modalService: ModalService) {
-    const currentUser = this.authService.getCurrentUser();
+  //   const currentUser = this.authService.getCurrentUser();
 
-    if (!currentUser || currentUser.role !== 'company') {
-      this.router.navigate(['/']);
-    }
-  }
+  //   if (!currentUser || currentUser.role !== 'company') {
+  //     this.router.navigate(['/']);
+  //   }
+  // }
+}
   @Input() menuId: any;
   navigateTo(route: string) {
     this.router.navigate([route]);
-  }
-
-  signOut() {
-    this.authService.logout();
-    this.router.navigate(['/']);
+   }
+  
+   logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('username'); // Remove access token from local storage
+    this.router.navigate(['/signin']); // Navigate to the logout route
   }
     //Add company Modal
     openModal() {

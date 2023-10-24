@@ -1,5 +1,5 @@
 <div>
-    <app-branchsidenav [menuId]="2"></app-branchsidenav>
+    <app-branchsidenav [menuId]="4"></app-branchsidenav>
     <div class="lg:pl-60  ">
         <div class="">
             <app-navbar></app-navbar>
@@ -47,20 +47,20 @@
                         <h3 class="text-lg font-semibold leading-6 text-gray-900" id="modal-title">Add Question</h3>
                     </div>
                 </div>
-                <form>
+                <form (ngSubmit)="onSubmit()"  #myForm="ngForm">
                     <div class="px-6 space-y-3">
                         <div>
                             <label for="c-name" class="block text-sm font-medium leading-6 text-gray-900">New
                                 Question</label>
                             <div class="mt-2">
-                                <input type="c-name" name="c-name" id="c-name"
+                                <input type="c-name" name="c-name" id="c-name" [(ngModel)]="formData.text"
                                     class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                     </div>
                     <div class=" flex px-6 pt-8 pb-6">
 
-                        <button type="button"
+                        <button type="submit"
                             class="inline-flex w-full justify-center rounded-md bg-gray-900 px-3 py-2.5 text-base font-semibold text-white shadow-sm">
                             Add Question</button>
                     </div>

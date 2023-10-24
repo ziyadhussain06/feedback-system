@@ -13,7 +13,7 @@
                 Branches </th>
                 <th scope="col"
                 class="px-3 py-3.5 text-left text-sm font-semibold text-[#475467] hidden md:table-cell">
-                Email </th>
+                Description </th>
                 <th scope="col"
                 class="px-3 py-3.5 text-left text-sm font-semibold text-[#475467] hidden md:table-cell">
                 City </th>
@@ -34,20 +34,20 @@
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 bg-white ">
-        <tr>
+        <tr *ngFor="let branchlist of brancheslist">
             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
                 <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
             </td>
             <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#101828] font-medium hidden md:table-cell">
-                01</td>
+                {{ branchlist.id }}</td>
             
             <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                DHA PAHSE 2</td>
+                {{ branchlist.name }}</td>
                 <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
-                KFCdha2@gmail.com
+                {{branchlist.description}}
                 </td>
                 <td
                 class="whitespace-nowrap px-3 py-4 text-sm text-[#475467] hidden md:table-cell">
@@ -126,7 +126,7 @@
                                               class="inline-flex flex-shrink-0 items-center rounded-lg bg-[white] px-2 py-0.5 text-xs font-medium text-[#344054] ring-1 ring-inset ring-green-600/20 mr-1">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
                                                   viewBox="0 0 8 8" fill="none">
-                                                  <circle cx="4" cy="4" r="3" fill="#197C3B" />
+                                                  <circle cx="4" cy="4" r="3" fill="#FF0000" />
                                               </svg>
                                               <span class="pl-2 py-0.5 text-xs font-medium">Negative </span>
                                           </span>
@@ -134,7 +134,7 @@
                                               class="inline-flex flex-shrink-0 items-center rounded-lg bg-[white] px-2 py-0.5 text-xs font-medium text-[#344054] ring-1 ring-inset ring-green-600/20 mr-1">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
                                                   viewBox="0 0 8 8" fill="none">
-                                                  <circle cx="4" cy="4" r="3" fill="#197C3B" />
+                                                  <circle cx="4" cy="4" r="3" fill="#FFFF00" />
                                               </svg>
                                               <span class="pl-2 py-0.5 text-xs font-medium">Average </span>
                                           </span>

@@ -9,20 +9,13 @@ import { ModalService } from '../../../modal.service';
 })
 export class SideNavComponent {
   constructor(private authService: AuthService, private router: Router,private modalService: ModalService) {
-    const currentUser = this.authService.getCurrentUser();
-
-    if (!currentUser || currentUser.role !== 'admin') {
-      this.router.navigate(['/']);
-    }
+   
   }
   @Input() menuId: any;
   navigateTo(route: string) {
     this.router.navigate([route]);
   }
-  signOut() {
-    this.authService.logout();
-    this.router.navigate(['/']);
-  }
+  
   //Add company Modal
   openModal() {
     this.modalService.openModal();
@@ -34,6 +27,12 @@ export class SideNavComponent {
 
   isModalOpen() {
     return this.modalService.getIsOpen();
+  }
+  logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('companyId');
+    this.router.navigate(['/signin']); // Navigate to the logout route
   }
 }
 

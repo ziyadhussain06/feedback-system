@@ -7,24 +7,16 @@ import { AuthService } from '../../../auth.service';
   styleUrls: ['./branchnavbar.component.css']
 })
 export class BranchnavbarComponent {
-  currentUser: any;
-  constructor(private authService: AuthService, private router: Router) {
-    const currentUser = this.authService.getCurrentUser();
-
-    if (!currentUser || currentUser.role !== 'branch') {
-      this.router.navigate(['/']);
-    }
+  [x: string]: any;
+  // currentUser: any;
+  constructor(private authService: AuthService, private router: Router) {}
+  logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('username'); // Remove access token from local storage
+    this.router.navigate(['/signin']); // Navigate to the logout route
   }
-  @Input() menuId: any;
-  navigateTo(route: string) {
-    this.router.navigate([route]);
-  }
-
-  ngOnInit(): void {
-    this.currentUser = this.authService.getCurrentUser();
-  }
-  signOut() {
-    this.authService.logout();
-    this.router.navigate(['/']);
+  username!: string | null;
+  ngOnInit() {
+    this.username = localStorage.getItem('username');
   }
 }
