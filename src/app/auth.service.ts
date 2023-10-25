@@ -8,6 +8,10 @@ import { Review } from './review';
 export class AuthService {
   //token
   private authToken: string | undefined;
+  private currentUser: any;
+  setCurrentUser(user: any) {
+    this.currentUser = user;
+  }
 
   setToken(token: string) {
     // this.authToken = token;
@@ -76,5 +80,16 @@ export class AuthService {
   private apiUrl8 = 'http://109.123.241.127:3000/review/company/'; // Replace with your API endpoint
   getAllreviewanalysis(id: string): Observable<any> {
     return this.http.get(this.apiUrl8+id);
+  }
+
+  //delete company
+  private apiUrl9 = 'http://109.123.241.127:3000/company'; // Replace with your API endpoint
+  deleteCompany(id: number): Observable<any> {
+    const url = `${this.apiUrl9}/${id}`;
+    return this.http.delete(url);
+  }
+
+  getUserId(): number {
+    return this.currentUser ? this.currentUser.id : null;
   }
 }

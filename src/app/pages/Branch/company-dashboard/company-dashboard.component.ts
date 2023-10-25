@@ -5,6 +5,7 @@ import { AuthService } from '../../../auth.service';
 import { ModalService } from 'src/app/modal.service';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-company-dashboard',
   templateUrl: './company-dashboard.component.html',

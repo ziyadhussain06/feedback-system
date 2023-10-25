@@ -38,21 +38,21 @@ closeModal() {
 isModalOpen() {
   return this.modalService.getIsOpen();
 }
-// Analysis: any[] | undefined;
-// ngOnInit() {
-//   const companyID = localStorage.getItem('companyId');
-//     if(companyID){
-//     this.authService.getAllreviewanalysis(companyID ).subscribe(
-//       data => {
-//         this.Analysis = data;
-//         console.log(this.Analysis)
-//       },
-//       error => {
-//         console.error('Error fetching analysis:', error);
-//       }
-//     );
-//   }
-// }
+Analysis: any[] | undefined;
+ngOnInit() {
+  const companyID = localStorage.getItem('companyId');
+    if(companyID){
+    this.authService.getAllreviewanalysis(companyID ).subscribe(
+      data => {
+        this.Analysis = data;
+        console.log(this.Analysis)
+      },
+      error => {
+        console.error('Error fetching analysis:', error);
+      }
+    );
+  }
+}
   
 }
 

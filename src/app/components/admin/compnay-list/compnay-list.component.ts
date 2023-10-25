@@ -23,9 +23,7 @@ export class CompnayListComponent {
 
   ngOnInit() {
     this.authservice.getAllCompanies().subscribe(
-    
       data => {
-    
         this.companies = data;
         console.log(this.companies)
       },
@@ -33,5 +31,23 @@ export class CompnayListComponent {
       //   console.error('Error fetching companies:', error);
       // }
     );
+  }
+  companyId!:any ;
+  deleteCompany(companyId: number) {
+    if(localStorage.getItem('companyId')){
+      this.companyId = localStorage.getItem('companyId');
+    }
+    this.authservice.deleteCompany(companyId)
+      .subscribe(
+        () => {
+          console.log(companyId)
+          console.log('delete company successfully')
+          // Success message or update the UI as needed
+        },
+        error => {
+          console.error('Error deleting company:', error);
+          // Handle error
+        }
+      );
   }
 }
